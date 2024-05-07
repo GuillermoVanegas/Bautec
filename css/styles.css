@@ -1,0 +1,95 @@
+/*Tipografia*/
+@font-face {
+    font-family: 'Velocista';
+    src: url('fonts/Velocista-Demo-FFP.ttf') format('truetype');
+    /* Ajusta la ruta según la ubicación real de tu archivo de fuente */
+}
+@font-face {
+    font-family: 'moltorscondital';
+    src: url('fonts/moltorscondital.ttf') format('truetype');
+    /* Ajusta la ruta según la ubicación real de tu archivo de fuente */
+}
+
+.header {
+    font-family: 'Velocista', sans-serif; /* Aplica la fuente Velocista al encabezado */
+    font-size: 20px;
+    margin-top: 20px;
+}
+.construction-text {
+    font-family: 'moltorscondital', sans-serif; /* Aplica la fuente moltorscondital al texto */
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+
+
+
+
+.header {
+    background-color: #333; /* Color de fondo del encabezado */
+    color: #fff; /* Color del texto */
+    padding: 20px 0; /* Espaciado interno */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+.nav__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__item {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.nav__link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+    color: #009086; /* Cambia el color del enlace al pasar el ratón por encima */
+} 
+
+
+
+
+
+.footer {
+    /*background-image: url('../img/bautecAzul.png');
+    background-size: contain; /* Ajusta la imagen para que quepa dentro del pie de página 
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita 
+    background-position: center center;*/
+
+    color: #000000; /* Color del texto */
+    padding: 50px 0; /* Espaciado interno superior e inferior */
+    text-align: center; /* Alinea el texto al centro */
+}
+
+.footer-content {
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+}
+
+.footer-info p {
+    margin: 10px 0; /* Espaciado entre párrafos */
+}
+
+.footer-bottom {
+    margin-top: 20px; /* Espaciado superior */
+}
