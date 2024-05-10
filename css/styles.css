@@ -1,35 +1,14 @@
 /*Tipografia*/
-@font-face {
-    font-family: 'Velocista';
-    src: url('fonts/Velocista-Demo-FFP.ttf') format('truetype');
-    /* Ajusta la ruta según la ubicación real de tu archivo de fuente */
-}
-@font-face {
-    font-family: 'moltorscondital';
-    src: url('fonts/moltorscondital.ttf') format('truetype');
-    /* Ajusta la ruta según la ubicación real de tu archivo de fuente */
-}
 
+/* Estilos generales del encabezado */
 .header {
-    font-family: 'Velocista', sans-serif; /* Aplica la fuente Velocista al encabezado */
-    font-size: 20px;
-    margin-top: 20px;
-}
-.construction-text {
-    font-family: 'moltorscondital', sans-serif; /* Aplica la fuente moltorscondital al texto */
-    font-size: 24px;
-    margin-top: 20px;
-}
-
-
-
-
-
-.header {
-    background-color: #333; /* Color de fondo del encabezado */
+    font-family: 'Velocista', 'Moltorscondital', sans-serif; /* Aplica la tipografía Velocista al encabezado */
+    background-color: rgba(86, 79, 79, 0.7); /* Fondo transparente oscuro */
     color: #fff; /* Color del texto */
-    padding: 20px 0; /* Espaciado interno */
+    padding: 15px 0; /* Espaciado interno */
+    backdrop-filter: blur(8px) brightness(1.2); /* Efecto borroso */
 }
+
 
 .container {
     display: flex;
@@ -40,31 +19,190 @@
     padding: 0 20px;
 }
 
-.logo img {
-    max-width: 100px;
+.logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: -70px;
 }
+
+.logo img {
+    max-width: 170px;
+    margin-right: 50px;
+    
+}
+
+/* Nuevo estilo para la línea diagonal */
+.logo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(100% - 0px); /* Ajusta según tu diseño */
+    width: 3px; /* Grosor de la línea */
+    height: 160%;
+    background-color: #000;
+    transform: translateY(-19%) rotate(35deg); /* Rota la línea diagonal */
+}
+
 
 .nav__list {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
 }
 
 .nav__item {
-    display: inline-block;
     margin-right: 20px;
 }
 
 .nav__link {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .nav__link:hover {
-    color: #009086; /* Cambia el color del enlace al pasar el ratón por encima */
-} 
+    color: #000000;
+}
+
+
+/*botones del menu*/
+.nav__list {
+    padding: 0;
+    list-style-type: none;
+    display: flex; /* Cambia a un diseño de caja flexible */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.nav__item {
+    font-size: 25px;
+    width: 8em;
+    height: 2em;
+    position: relative;
+    margin-top: 0.8em;
+    cursor: pointer;
+}
+
+.nav__item::before,
+.nav__item::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    border-left: inherit;
+    z-index: -1;
+}
+
+
+
+.nav__link {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-family: Velocista, sans-serif;
+    text-transform: capitalize;
+    font-size: 17px;
+    transform: translateX(calc(0.5em * 3 + 0.08em * 20)); /* Ajuste para mover más a la derecha */
+    transition: 0.7s;
+    text-decoration: none;
+}
+
+.nav__link:hover {
+    transform: translateX(0.15em);
+}
+
+
+
+
+
+
+
+/*boton bara los idiomas*/
+.language-dropdown {
+    position: relative;
+    display: inline-block;
+    /* Alinea el botón a la derecha */
+    margin-right: -100px;
+  }
+  
+  .language-dropdown select {
+    padding: 8px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Velocista", sans-serif; 
+  }
+  
+  .language-dropdown select:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .language-dropdown select:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .language-dropdown select:hover option {
+    background-color: #f9f9f9;
+  }
+  
+  .language-dropdown select option:checked {
+    background-color: #ddd;
+  }
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+body {
+    background-image: url('/img/bautecAzulyNegroM.png'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el header */
+    background-position: center; /* Centra la imagen en el header */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    /* Otros estilos que quieras aplicar al header */
+    background-color: rgba(0, 0, 0, 0.5); /* Agrega un fondo semitransparente */
+    padding: 10px 0; /* Espaciado interno */
+    color: #fff; /* Color del texto */
+}
+
+.construction-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Utiliza el 80% de la altura de la ventana */
+}
+
+.construction-text {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
