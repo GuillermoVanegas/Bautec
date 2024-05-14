@@ -1,14 +1,20 @@
 /*Tipografia*/
 
 /* Estilos generales del encabezado */
+/* Header */
+/* Header */
+/* Header */
 .header {
-    font-family: 'Velocista', 'Moltorscondital', sans-serif; /* Aplica la tipografía Velocista al encabezado */
-    background-color: rgba(86, 79, 79, 0.7); /* Fondo transparente oscuro */
-    color: #fff; /* Color del texto */
-    padding: 15px 0; /* Espaciado interno */
-    backdrop-filter: blur(8px) brightness(1.2); /* Efecto borroso */
+    font-family: 'Velocista', 'Moltorscondital', sans-serif;
+    background-color: rgba(32, 30, 30, 0.7);
+    color: #fff;
+    padding: 0px 0;
+    backdrop-filter: blur(8px) brightness(1.2);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 99%;
 }
-
 
 .container {
     display: flex;
@@ -29,21 +35,7 @@
 .logo img {
     max-width: 170px;
     margin-right: 50px;
-    
 }
-
-/* Nuevo estilo para la línea diagonal */
-.logo::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: calc(100% - 0px); /* Ajusta según tu diseño */
-    width: 3px; /* Grosor de la línea */
-    height: 160%;
-    background-color: #000;
-    transform: translateY(-19%) rotate(35deg); /* Rota la línea diagonal */
-}
-
 
 .nav__list {
     list-style-type: none;
@@ -63,18 +55,13 @@
     transition: color 0.3s ease;
 }
 
-.nav__link:hover {
-    color: #000000;
-}
-
-
-/*botones del menu*/
+/* Botones del menú */
 .nav__list {
     padding: 0;
     list-style-type: none;
-    display: flex; /* Cambia a un diseño de caja flexible */
-    justify-content: center; /* Centra horizontalmente los elementos */
-    align-items: center; /* Centra verticalmente los elementos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav__item {
@@ -95,8 +82,6 @@
     z-index: -1;
 }
 
-
-
 .nav__link {
     display: flex;
     align-items: center;
@@ -104,7 +89,7 @@
     font-family: Velocista, sans-serif;
     text-transform: capitalize;
     font-size: 17px;
-    transform: translateX(calc(0.5em * 3 + 0.08em * 20)); /* Ajuste para mover más a la derecha */
+    transform: translateX(calc(0.5em * 3 + 0.08em * 20));
     transition: 0.7s;
     text-decoration: none;
 }
@@ -113,21 +98,14 @@
     transform: translateX(0.15em);
 }
 
-
-
-
-
-
-
-/*boton bara los idiomas*/
+/* Botón para los idiomas */
 .language-dropdown {
     position: relative;
     display: inline-block;
-    /* Alinea el botón a la derecha */
     margin-right: -100px;
-  }
-  
-  .language-dropdown select {
+}
+
+.language-dropdown select {
     padding: 8px 15px;
     font-size: 16px;
     border: 1px solid #ddd;
@@ -139,25 +117,39 @@
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: "Velocista", sans-serif; 
-  }
-  
-  .language-dropdown select:hover {
+}
+
+.language-dropdown select:hover {
     background-color: #f9f9f9;
-  }
-  
-  .language-dropdown select:focus {
+}
+
+.language-dropdown select:focus {
     outline: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .language-dropdown select:hover option {
+}
+
+.language-dropdown select:hover option {
     background-color: #f9f9f9;
-  }
-  
-  .language-dropdown select option:checked {
+}
+
+.language-dropdown select option:checked {
     background-color: #ddd;
-  }
-  
+}
+
+/* Estilo para el contenido de la página para probar el desplazamiento */
+.construction-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.construction-text {
+    font-size: 24px;
+    color: #333;
+}
+
+
+
+
 
 
 
@@ -179,6 +171,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5); /* Agrega un fondo semitransparente */
     padding: 10px 0; /* Espaciado interno */
     color: #fff; /* Color del texto */
+    
 }
 
 .construction-container {
@@ -209,25 +202,167 @@ body {
 
 
 .footer {
-    /*background-image: url('../img/bautecAzul.png');
-    background-size: contain; /* Ajusta la imagen para que quepa dentro del pie de página 
-    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita 
-    background-position: center center;*/
-
-    color: #000000; /* Color del texto */
-    padding: 50px 0; /* Espaciado interno superior e inferior */
-    text-align: center; /* Alinea el texto al centro */
+    font-family: moltorscondital, sans-serif;
+    background-color: rgba(32, 30, 30, 0.7);
+    color: #fff;
+    padding: 20px 0; /* Reducido de 50px a 20px */
+    backdrop-filter: blur(8px) brightness(1.2); /* Efecto borroso */
 }
 
-.footer-content {
-    max-width: 1200px; /* Ancho máximo del contenido */
-    margin: 0 auto; /* Centra el contenido horizontalmente */
+.footer-top {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px; /* Reducido de 15px a 10px */
+    border-bottom: 1px solid #001eff;
 }
 
-.footer-info p {
-    margin: 10px 0; /* Espaciado entre párrafos */
+.footer-col {
+    text-align: center;
+}
+
+.footer-col i {
+    font-size: 24px;
+    color: rgb(255, 0, 0);
+    margin-bottom: 5px; /* Reducido de 10px a 5px */
+}
+
+.footer-col h3 {
+    margin-bottom: 5px; /* Reducido de 10px a 5px */
+}
+
+.footer-col p {
+    margin-bottom: 0;
 }
 
 .footer-bottom {
-    margin-top: 20px; /* Espaciado superior */
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px; /* Reducido de 20px a 10px */
+}
+
+.footer-section {
+    max-width: 250px; /* Reducido de 300px a 250px */
+}
+
+.footer-logo {
+    width: 250px; /* Reducido de 180px a 150px */
+    margin-bottom: 5px; /* Ajustado a 5px */
+}
+
+.footer-section h3 {
+    margin-bottom: 5px; /* Reducido de 10px a 5px */
+    position: relative;
+    display: inline-block;
+}
+
+.footer-section h3::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: rgb(255, 0, 0);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 18px; /* Reducido de 20px a 18px */
+    margin-bottom: 5px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    margin-right: 10px;
+    font-size: 20px; /* Ajustado de 0px a 20px para que los íconos sean visibles */
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-section .subscribe-form {
+    display: flex;
+    align-items: center;
+}
+
+.footer-section .subscribe-form input {
+    padding: px; /* Reducido de 10px a 5px */
+    border: none;
+    border-radius: 3px 0 0 3px;
+    outline: none;
+    font-size: 14px;
+    width: 70%;
+}
+
+.footer-section .subscribe-form button {
+    padding: 5px; /* Reducido de 10px a 5px */
+    border: none;
+    background-color: rgb(0, 72, 255);
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+}
+
+.footer-bottom-bar {
+    text-align: center;
+    padding-top: 20px; /* Reducido de 30px a 20px */
+    border-top: 1px solid #000dff;
+    font-size: 14px;
+}
+
+.footer-bottom-bar span {
+    color: rgb(255, 0, 0);
+}
+
+.footer-bottom-bar ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0; /* Reducido de 20px a 10px */
+    display: flex;
+    justify-content: center;
+}
+
+.footer-bottom-bar ul li {
+    margin: 0 10px;
+}
+
+.footer-bottom-bar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-bottom-bar ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icons a img {
+    width: 80px;
+    height: 80px;
+}
+.footer-icon {
+    width: 70px;
+    height: 100px;
+    margin-bottom: 0px;
 }
