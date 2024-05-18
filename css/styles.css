@@ -1,9 +1,18 @@
-/*Tipografia*/
+@font-face {
+    font-family: 'Evogria';
+    src: url('../fonts/Evogria.otf') format('opentype');
+}
 
-/* Estilos generales del encabezado */
-/* Header */
-/* Header */
-/* Header */
+@font-face {
+    font-family: 'EvogriaItalic';
+    src: url('../fonts/Evogria\ Italic.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Moltorscondital';
+    src: url('../fonts/moltorscondital.ttf') format('truetype');
+}
+
+/* HEADER */
 .header {
     font-family: 'Velocista', 'Moltorscondital', sans-serif;
     background-color: rgba(32, 30, 30, 0.7);
@@ -152,16 +161,7 @@
 
 
 
-
-  
-
-
-
-
-
-
-
-
+/* BODY */
 body {
     background-image: url('/img/bautecAzulyNegroM.png'); /* Ruta de la imagen de fondo */
     background-size: cover; /* Ajusta la imagen para cubrir todo el header */
@@ -171,7 +171,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5); /* Agrega un fondo semitransparente */
     padding: 10px 0; /* Espaciado interno */
     color: #fff; /* Color del texto */
-    
+    margin-top: 70px;
 }
 
 .construction-container {
@@ -191,16 +191,7 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
+/* FOOTER */
 .footer {
     font-family: moltorscondital, sans-serif;
     background-color: rgba(32, 30, 30, 0.7);
@@ -366,3 +357,80 @@ body {
     height: 100px;
     margin-bottom: 0px;
 }
+
+
+
+/* Estilos para la sección "Sobre Nosotros" */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 100px; /* Ajusta según sea necesario para evitar que el contenido se solape con el menú */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-section, .mission-vision-section {
+    background: linear-gradient(135deg, #cf0000 0%, #4d0000 100%);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.about-section h1, .mission-vision-section h2 {
+    font-family: 'Velocista', sans-serif;
+    color: #ffffff; /* Blanco para los títulos */
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.about-section p, .mission-vision-section p {
+    font-family: 'Evogria', sans-serif;
+    color: #ffffff; /* Blanco para el texto */
+    line-height: 1.8;
+    text-align: center;
+    margin: 0 20px;
+}
+
+.mission-vision-section h2:first-of-type {
+    margin-top: 0;
+}
+
+/* Animación de desplazamiento */
+.slide-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Estilo adicional para mejorar la apariencia */
+.about-section h1 {
+    font-size: 30px;
+}
+
+.mission-vision-section h2 {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.about-section p, .mission-vision-section p {
+    font-size: 17px;
+    margin: 10px 0;
+}
+
+.about-section {
+    border: 1px solid rgba(255, 0, 0, 0.3); /* Borde rojo oscuro */
+}
+
+.mission-vision-section {
+    border: 1px solid rgba(0, 30, 255, 0.3); /* Borde azul oscuro */
+}
+
+

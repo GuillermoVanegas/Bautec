@@ -5,46 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bautec</title>
     <!-- Enlaces a archivos CSS u otros recursos -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
     <!-- Contenedor para el encabezado -->
     <div id="header-container"></div>
 
     <!-- Contenido específico de la página -->
     <div class="construction-container">
-        <img src="img/gif.gif" alt="en construccion" style="max-width: 40%;"> <!-- Utiliza el 40% del ancho disponible -->
+        <img src="img/gif.gif" alt="en construccion" style="max-width: 40%;">
         <p class="construction-text">La página está en construcción</p>
     </div>
     
-   
     <!-- Contenedor para el pie de página -->
     <div id="footer-container"></div>
 
-    <!-- Script para cargar el encabezado y el pie de página -->
-    <script>
-        // Función para cargar el encabezado desde header.html
-        function cargarEncabezado() {
-            fetch('header.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('header-container').innerHTML = html;
-                });
-        }
-
-        // Función para cargar el pie de página desde footer.html
-        function cargarPieDePagina() {
-            fetch('footer.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('footer-container').innerHTML = html;
-                });
-        }
-
-        // Llamar a las funciones para cargar el encabezado y el pie de página
-        cargarEncabezado();
-        cargarPieDePagina();
-    </script>
+    <!-- Incluir el archivo JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>

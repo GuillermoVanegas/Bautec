@@ -3,65 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bautec</title>
-    <!-- Enlaces a archivos CSS u otros recursos -->
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background-image: url('img/sinfondo.png');
-            background-size: contain; /* Ajusta la imagen para que quepa dentro del cuerpo */
-            background-position: center; /* Centra la imagen horizontalmente y verticalmente */
-            background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
-        }
-        .construction-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 90vh; /* Utiliza el 80% de la altura de la ventana */
-        }
-        .construction-text {
-            font-size: 24px;
-            margin-top: 20px;
-        }
-    </style>
+    <title>Sobre Bautec</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- Contenedor para el encabezado -->
     <div id="header-container"></div>
 
     <!-- Contenido específico de la página -->
-    <div class="construction-container">
-        <img src="img/gif.gif" alt="en construccion" style="max-width: 40%;"> <!-- Utiliza el 80% del ancho disponible -->
-        <p class="construction-text">La página está en construcción</p>
+    <div class="about-container">
+        <div class="about-section">
+            <h1>SOBRE NOSOTROS</h1>
+            <p>Somos una empresa mexicana dedicada a la fabricación e integración de troqueles, moldes, dispositivos de control y soldadura, laminadores y perfiladoras. 60 años de experiencia nos avalan. Iniciamos una nueva etapa como productores de piezas de inyección de polímeros, estampado, perfilado y conjuntos de plástico y metal.</p>
+        </div>
+        <div class="mission-vision-section">
+            <h2>MISIÓN</h2>
+            <p>Ser un proveedor presente en los principales OEMs, enfocado en el desarrollo y producción de herramientas; de serie producción y sus tecnologías. Pendiente por tener su propio fabricante de herramientas, reduciendo costos, tiempos de arranque y tiempos de reacción.</p>
+            <h2>VISIÓN</h2>
+            <p>Somos un equipo de expertos enfocados a resolver los desafíos en la industria automotriz. Nuestro compromiso es resolver los requerimientos de nuestros socios comerciales en términos de herramientas, producción masiva de piezas de plástico y metal y ensamblajes; también fabricando herramientas que superan tus expectativas.</p>
+        </div>
     </div>
 
     <!-- Contenedor para el pie de página -->
     <div id="footer-container"></div>
 
-    <!-- Script para cargar el encabezado y el pie de página -->
-    <script>
-        // Función para cargar el encabezado desde header.html
-        function cargarEncabezado() {
-            fetch('header.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('header-container').innerHTML = html;
-                });
-        }
-
-        // Función para cargar el pie de página desde footer.html
-        function cargarPieDePagina() {
-            fetch('footer.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('footer-container').innerHTML = html;
-                });
-        }
-
-        // Llamar a las funciones para cargar el encabezado y el pie de página
-        cargarEncabezado();
-        cargarPieDePagina();
-    </script>
+    <!-- Incluir el archivo JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
