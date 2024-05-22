@@ -11,7 +11,10 @@
     font-family: 'Moltorscondital';
     src: url('../fonts/moltorscondital.ttf') format('truetype');
 }
-
+@font-face {
+    font-family: 'Velocista';
+    src: url('../fonts/Velocista-Demo-FFP.ttf') format('truetype');
+}
 /* HEADER */
 .header {
     font-family: 'Velocista', 'Moltorscondital', sans-serif;
