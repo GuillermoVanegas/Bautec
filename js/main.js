@@ -5,6 +5,16 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.text())
             .then(html => {
                 document.getElementById('header-container').innerHTML = html;
+
+                // Añadir el script para el menú hamburguesa después de cargar el encabezado
+                const menuToggle = document.querySelector('.menu-toggle');
+                const nav = document.querySelector('.nav');
+
+                if (menuToggle && nav) {
+                    menuToggle.addEventListener('click', function() {
+                        nav.classList.toggle('active');
+                    });
+                }
             });
     }
 

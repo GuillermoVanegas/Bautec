@@ -25,7 +25,8 @@
     position: fixed;
     top: 0;
     z-index: 1000;
-    width: 99%;
+    width: 100%;
+    overflow-x: auto; /* Permite el desplazamiento horizontal en dispositivos móviles */
 }
 
 .container {
@@ -54,6 +55,7 @@
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples líneas si es necesario */
 }
 
 .nav__item {
@@ -115,6 +117,7 @@
     position: relative;
     display: inline-block;
     margin-right: -100px;
+    align-self: center; /* Centra el menú de idioma horizontalmente */
 }
 
 .language-dropdown select {
@@ -128,7 +131,7 @@
     background-color: transparent;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-family: "EvogriaItalic", sans-serif; 
+    font-family: "EvogriaItalic", sans-serif;
 }
 
 .language-dropdown select:hover {
@@ -158,6 +161,81 @@
     font-size: 24px;
     color: #333;
 }
+
+/* Estilos para el botón de menú hamburguesa */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Media Queries para móviles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center; /* Centra los elementos horizontalmente */
+        padding: 0 10px;
+    }
+
+    .logo {
+        margin-left: 0;
+        margin-bottom: 10px; /* Agrega un margen inferior para separar el logo del resto */
+    }
+
+    .logo img {
+        margin-right: 0; /* Elimina el margen derecho en dispositivos móviles */
+    }
+
+    .nav {
+        display: none; /* Oculta el menú por defecto */
+        width: 100%;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        align-items: center; /* Centra los elementos del menú horizontalmente */
+        width: 100%;
+    }
+
+    .nav__item {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .nav__link {
+        justify-content: center;
+        font-size: 16px;
+    }
+
+    .language-dropdown {
+        margin-right: 0;
+        margin-top: 5px;
+        align-self: center; /* Centra el menú de lenguaje horizontalmente */
+    }
+
+    .language-dropdown select {
+        width: 100%; /* Asegura que el select ocupe todo el ancho disponible */
+    }
+
+    .menu-toggle {
+        display: block; /* Muestra el botón de menú hamburguesa */
+        align-self: center; /* Centra el botón de menú hamburguesa */
+        margin-top: 10px;
+    }
+}
+
+/* Mostrar el menú cuando esté activo */
+.nav.active {
+    display: block;
+    text-align: center; /* Centra el texto del menú cuando está activo */
+}
+
+
+
 
 
 
@@ -199,29 +277,32 @@ body {
     font-family: EvogriaItalic, sans-serif;
     background-color: rgba(32, 30, 30, 0.7);
     color: #fff;
-    padding: 20px 0; /* Reducido de 50px a 20px */
-    backdrop-filter: blur(8px) brightness(1.2); /* Efecto borroso */
+    padding: 20px 0;
+    backdrop-filter: blur(8px) brightness(1.2);
 }
 
 .footer-top {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    padding-bottom: 10px; /* Reducido de 15px a 10px */
+    padding-bottom: 10px;
     border-bottom: 1px solid #001eff;
 }
 
 .footer-col {
     text-align: center;
+    flex: 1;
+    margin: 10px 0;
 }
 
 .footer-col i {
     font-size: 24px;
     color: rgb(255, 0, 0);
-    margin-bottom: 5px; /* Reducido de 10px a 5px */
+    margin-bottom: 5px;
 }
 
 .footer-col h3 {
-    margin-bottom: 5px; /* Reducido de 10px a 5px */
+    margin-bottom: 5px;
 }
 
 .footer-col p {
@@ -230,21 +311,24 @@ body {
 
 .footer-bottom {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    padding-top: 10px; /* Reducido de 20px a 10px */
+    padding-top: 10px;
 }
 
 .footer-section {
-    max-width: 250px; /* Reducido de 300px a 250px */
+    max-width: 250px;
+    flex: 1;
+    margin: 10px 0;
 }
 
 .footer-logo {
-    width: 250px; /* Reducido de 180px a 150px */
-    margin-bottom: 5px; /* Ajustado a 5px */
+    width: 250px;
+    margin-bottom: 5px;
 }
 
 .footer-section h3 {
-    margin-bottom: 5px; /* Reducido de 10px a 5px */
+    margin-bottom: 5px;
     position: relative;
     display: inline-block;
 }
@@ -262,14 +346,14 @@ body {
 
 .footer-section p {
     font-size: 14px;
-    line-height: 18px; /* Reducido de 20px a 18px */
+    line-height: 18px;
     margin-bottom: 5px;
 }
 
 .social-icons a {
     color: #ffffff;
     margin-right: 10px;
-    font-size: 20px; /* Ajustado de 0px a 20px para que los íconos sean visibles */
+    font-size: 20px;
 }
 
 .footer-section ul {
@@ -292,7 +376,7 @@ body {
 }
 
 .footer-section .subscribe-form input {
-    padding: px; /* Reducido de 10px a 5px */
+    padding: 5px;
     border: none;
     border-radius: 3px 0 0 3px;
     outline: none;
@@ -301,7 +385,7 @@ body {
 }
 
 .footer-section .subscribe-form button {
-    padding: 5px; /* Reducido de 10px a 5px */
+    padding: 5px;
     border: none;
     background-color: rgb(0, 72, 255);
     border-radius: 0 3px 3px 0;
@@ -310,7 +394,7 @@ body {
 
 .footer-bottom-bar {
     text-align: center;
-    padding-top: 20px; /* Reducido de 30px a 20px */
+    padding-top: 20px;
     border-top: 1px solid #000dff;
     font-size: 14px;
 }
@@ -322,9 +406,10 @@ body {
 .footer-bottom-bar ul {
     list-style: none;
     padding: 0;
-    margin: 10px 0 0 0; /* Reducido de 20px a 10px */
+    margin: 10px 0 0 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .footer-bottom-bar ul li {
@@ -344,6 +429,7 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 10px;
+    flex-wrap: wrap;
 }
 
 .social-icons a {
@@ -355,11 +441,81 @@ body {
     width: 70px;
     height: 70px;
 }
+
 .footer-icon {
     width: 70px;
     height: 100px;
     margin-bottom: 0px;
 }
+
+/* Media Queries para móviles */
+@media (max-width: 768px) {
+    .footer-top,
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0; /* Reduce el padding */
+    }
+
+    .footer-col,
+    .footer-section {
+        max-width: 100%;
+        margin: 5px 0; /* Reduce el margen */
+    }
+
+    .footer-logo {
+        width: 100%;
+        max-width: 120px; /* Reduce el tamaño del logo */
+    }
+
+    .footer-section h3 {
+        font-size: 16px; /* Reduce el tamaño del texto */
+        margin-bottom: 3px; /* Reduce el margen inferior */
+    }
+
+    .footer-section p {
+        font-size: 12px; /* Reduce el tamaño del texto */
+        margin-bottom: 3px; /* Reduce el margen inferior */
+    }
+
+    .footer-section ul li {
+        margin-bottom: 3px; /* Reduce el margen inferior */
+    }
+
+    .footer-section .subscribe-form input {
+        padding: 3px; /* Reduce el padding */
+        font-size: 12px; /* Reduce el tamaño del texto */
+    }
+
+    .footer-section .subscribe-form button {
+        padding: 3px; /* Reduce el padding */
+        font-size: 12px; /* Reduce el tamaño del texto */
+    }
+
+    .social-icons a img {
+        width: 50px; /* Reduce el tamaño de los íconos */
+        height: 50px; /* Reduce el tamaño de los íconos */
+    }
+
+    .footer-bottom-bar {
+        font-size: 12px; /* Reduce el tamaño del texto */
+        padding-top: 10px; /* Reduce el padding */
+    }
+
+    .footer-bottom-bar ul li {
+        margin: 5px 0; /* Reduce el margen */
+    }
+
+    .footer-bottom-bar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
 
 
 
