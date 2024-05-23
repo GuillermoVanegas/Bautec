@@ -29,28 +29,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Función para iniciar las animaciones con Intersection Observer
     function iniciarAnimaciones() {
-        const aboutSection = document.querySelector('.about-section');
-        const missionVisionSection = document.querySelector('.mission-vision-section');
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
+        if (!isMobile) { // Solo ejecutar animaciones en dispositivos no móviles
+            const elements = document.querySelectorAll('.about-section, .mission-vision-section');
 
-        const observerCallback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('slide-in');
-                    observer.unobserve(entry.target);
-                }
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('slide-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            elements.forEach(element => {
+                if (element) observer.observe(element);
             });
-        };
-
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-        if (aboutSection) observer.observe(aboutSection);
-        if (missionVisionSection) observer.observe(missionVisionSection);
+        } else {
+            // Asegurarse de que los elementos sean visibles en móviles
+            document.querySelectorAll('.about-section, .mission-vision-section').forEach(element => {
+                element.style.opacity = 1;
+                element.style.transform = "none";
+            });
+        }
     }
 
     // Llamar a las funciones para cargar el encabezado y el pie de página

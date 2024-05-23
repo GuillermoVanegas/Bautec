@@ -248,9 +248,8 @@ body {
     background-size: cover; /* Ajusta la imagen para cubrir todo el header */
     background-position: center; /* Centra la imagen en el header */
     background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
-    /* Otros estilos que quieras aplicar al header */
     background-color: rgba(0, 0, 0, 0.5); /* Agrega un fondo semitransparente */
-    padding: 10px 0; /* Espaciado interno */
+    padding: 20px 0; /* Espaciado interno */
     color: #fff; /* Color del texto */
     margin-top: 70px;
 }
@@ -260,12 +259,48 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Utiliza el 80% de la altura de la ventana */
+    height: 100vh; /* Utiliza el 100% de la altura de la ventana */
 }
 
 .construction-text {
     font-size: 24px;
     margin-top: 20px;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    body {
+        background-size: auto 100%; /* Ajusta la imagen para cubrir la altura del teléfono */
+        background-attachment: scroll; /* Asegura que la imagen se desplace con el contenido */
+    }
+
+    .construction-container {
+        height: auto; /* Ajusta la altura del contenedor */
+        padding: 20px; /* Añade padding para evitar que el contenido toque los bordes */
+    }
+
+    .construction-text {
+        font-size: 20px; /* Ajusta el tamaño del texto */
+        margin-top: 10px; /* Reduce el margen superior */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-size: auto 100%; /* Ajusta la imagen para cubrir la altura del teléfono */
+        background-attachment: scroll; /* Asegura que la imagen se desplace con el contenido */
+    }
+
+    .construction-container {
+        height: auto; /* Ajusta la altura del contenedor */
+        padding: 10px; /* Añade padding para evitar que el contenido toque los bordes */
+        padding-top: 150px;
+    }
+
+    .construction-text {
+        font-size: 18px; /* Ajusta el tamaño del texto */
+        margin-top: 10px; /* Reduce el margen superior */
+    }
 }
 
 
@@ -517,8 +552,6 @@ body {
 
 
 
-
-
 /* Estilos para la sección "Sobre Nosotros" */
 .about-container {
     max-width: 1200px;
@@ -591,5 +624,64 @@ body {
 .mission-vision-section {
     border: 1px solid rgba(0, 30, 255, 0.3); /* Borde azul oscuro */
 }
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 10px;
+        padding-top: 140px;
+    }
+
+    .about-section, .mission-vision-section {
+        padding: 20px;
+        margin-bottom: 15px;
+        opacity: 1; /* Visible inmediatamente */
+        transform: none; /* Sin transformación */
+        transition: none; /* Sin transición */
+    }
+
+    .about-section h1, .mission-vision-section h2 {
+        font-size: 24px;
+    }
+
+    .about-section p, .mission-vision-section p {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-container {
+        padding: 5px;
+        padding-top: 150px;
+    }
+
+    .about-section, .mission-vision-section {
+        padding: 15px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 1; /* Visible inmediatamente */
+        transform: none; /* Sin transformación */
+        transition: none; /* Sin transición */
+    }
+
+    .about-section h1, .mission-vision-section h2 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .about-section p, .mission-vision-section p {
+        font-size: 14px;
+        margin: 0 5px;
+        text-align: justify; /* Justificar texto para mejor legibilidad en pantallas pequeñas */
+    }
+
+    .about-section, .mission-vision-section {
+        border-radius: 8px;
+    }
+}
+
 
 
