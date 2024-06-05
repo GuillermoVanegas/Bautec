@@ -135,12 +135,12 @@
 }
 
 .language-dropdown select:hover {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
 }
 
 .language-dropdown select:focus {
     outline: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(186, 28, 28, 0.1);
 }
 
 .language-dropdown select:hover option {
@@ -244,15 +244,17 @@
 
 /* BODY */
 body {
-    background-image: url('/img/bautecAzulyNegroM.png'); /* Ruta de la imagen de fondo */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el header */
-    background-position: center; /* Centra la imagen en el header */
-    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    background: linear-gradient(135deg, #0f1c47, #0059ff, #1e00ff, #0b2860, #073ef4); /* Degradado azul con varios tonos */
+    background-size: cover; /* Ajusta el degradado para cubrir todo el fondo */
+    background-position: center; /* Centra el degradado */
+    background-repeat: no-repeat; /* Evita que el degradado se repita */
     background-color: rgba(0, 0, 0, 0.5); /* Agrega un fondo semitransparente */
     padding: 20px 0; /* Espaciado interno */
     color: #fff; /* Color del texto */
     margin-top: 70px;
 }
+
+
 
 .construction-container {
     display: flex;
@@ -557,7 +559,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    padding-top: 100px; /* Ajusta según sea necesario para evitar que el contenido se solape con el menú */
+    padding-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -566,6 +568,7 @@ body {
 
 .about-section, .mission-vision-section {
     background: linear-gradient(135deg, #cf0000 0%, #4d0000 100%);
+    font-family: 'Velocista';
     padding: 30px;
     border-radius: 12px;
     margin-bottom: 30px;
@@ -578,7 +581,7 @@ body {
 
 .about-section h1, .mission-vision-section h2 {
     font-family: 'Velocista', sans-serif;
-    color: #ffffff; /* Blanco para los títulos */
+    color: #ffffff;
     margin-bottom: 20px;
     text-align: center;
     text-transform: uppercase;
@@ -586,7 +589,7 @@ body {
 
 .about-section p, .mission-vision-section p {
     font-family: 'Evogria', sans-serif;
-    color: #ffffff; /* Blanco para el texto */
+    color: #ffffff;
     line-height: 1.8;
     text-align: center;
     margin: 0 20px;
@@ -603,13 +606,8 @@ body {
 }
 
 /* Estilo adicional para mejorar la apariencia */
-.about-section h1 {
+.about-section h1, .mission-vision-section h2 {
     font-size: 30px;
-}
-
-.mission-vision-section h2 {
-    font-size: 30px;
-    margin-top: 20px;
 }
 
 .about-section p, .mission-vision-section p {
@@ -617,27 +615,33 @@ body {
     margin: 10px 0;
 }
 
-.about-section {
-    border: 1px solid rgba(255, 0, 0, 0.3); /* Borde rojo oscuro */
-}
-
-.mission-vision-section {
-    border: 1px solid rgba(0, 30, 255, 0.3); /* Borde azul oscuro */
-}
-
 /* Media Queries para dispositivos móviles */
-@media (max-width: 768px) {
-    .about-container {
-        padding: 10px;
-        padding-top: 140px;
+@media (max-width: 1024px) {
+    .about-section, .mission-vision-section, .values-section {
+        padding: 20px;
+        margin-bottom: 15px;
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 
+    .about-section h1, .mission-vision-section h2 {
+        font-size: 24px;
+    }
+
+    .about-section p, .mission-vision-section p, .values-section p {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
     .about-section, .mission-vision-section {
         padding: 20px;
         margin-bottom: 15px;
-        opacity: 1; /* Visible inmediatamente */
-        transform: none; /* Sin transformación */
-        transition: none; /* Sin transición */
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 
     .about-section h1, .mission-vision-section h2 {
@@ -651,21 +655,18 @@ body {
 }
 
 @media (max-width: 480px) {
-    .about-container {
-        padding: 5px;
-        padding-top: 150px;
-    }
-
     .about-section, .mission-vision-section {
         padding: 15px;
         margin-bottom: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        opacity: 1; /* Visible inmediatamente */
-        transform: none; /* Sin transformación */
-        transition: none; /* Sin transición */
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
+ 
+    
 
     .about-section h1, .mission-vision-section h2 {
         font-size: 18px;
@@ -675,13 +676,206 @@ body {
     .about-section p, .mission-vision-section p {
         font-size: 14px;
         margin: 0 5px;
-        text-align: justify; /* Justificar texto para mejor legibilidad en pantallas pequeñas */
-    }
-
-    .about-section, .mission-vision-section {
-        border-radius: 8px;
+        text-align: justify;
     }
 }
+/* Estilos específicos para la sección de valores */
+.values-section {
+    background: linear-gradient(135deg, #cf0000 0%, #4d0000 100%);
+    font-family: 'Velocista';
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.values-section h1 {
+    font-family: 'Velocista', sans-serif;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 36px;
+}
+
+.values-section p {
+    font-family: 'Evogria', sans-serif;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: justify;
+    margin: 10px 0;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.value-item {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.value-item h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    border-bottom: 3px solid rgb(255, 255, 255); /* Ajusta el grosor según sea necesario */
+    padding-bottom: 5px;
+}
+
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 1024px) {
+    .values-section {
+        padding: 20px;
+        margin-bottom: 15px;
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .values-section h1 {
+        font-size: 28px;
+    }
+
+    .values-section p {
+        font-size: 14px;
+        margin: 0 10px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .values-section {
+        padding: 15px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .values-section h1 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .values-section p {
+        font-size: 14px;
+        margin: 0 5px;
+        text-align: justify;
+    }
+
+    .values-section {
+        border-radius: 8px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animación de desplazamiento para pantallas grandes */
+@media (min-width: 769px) {
+    .slide-in {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
+/* Estilos generales para la página de contacto */
+/* Estilos para los recuadros de información de contacto */
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    background-color: rgba(32, 30, 30, 0.7); /* Fondo oscuro transparente */
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center; /* Alineación del contenido al centro */
+    margin: 10px; /* Espacio entre los elementos */
+    flex: 1 1 100%; /* Ocupa todo el ancho en dispositivos pequeños */
+}
+
+.contact-item h3 {
+    margin-top: 10px; /* Espacio entre el título y el texto */
+}
+
+.contact-item p {
+    margin: 5px 0; /* Espacio alrededor del texto */
+}
+
+/* Estilos para el texto de ubicación */
+.contact-text {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #cf0000 0%, #4d0000 100%);
+    font-family: 'Velocista';
+    padding: 3px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333;
+}
+
+/* Estilos para el contenedor del mapa */
+.map-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    margin-top: 40px; /* Ajuste del margen superior */
+    margin-bottom: 70px; /* Espacio adicional hacia abajo */
+    border-radius: 50px; /* Bordes redondeados */
+    overflow: hidden; /* Evita que los bordes redondeados se vean cortados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 10px;
+}
+
+.map-container iframe {
+    border: 0; /* Elimina el borde del iframe */
+}
+
+/* Media query para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .contact-info {
+        flex-direction: column; /* Cambia a dirección vertical */
+        align-items: center; /* Centra los elementos horizontalmente */
+        margin-top: 100px; /* Aumenta el margen superior */
+    }
+}
+
+
+
+
+
+
 
 
 
