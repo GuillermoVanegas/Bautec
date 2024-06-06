@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
         if (!isMobile) { // Solo ejecutar animaciones en dispositivos no móviles
-            const elements = document.querySelectorAll('.about-section, .mission-vision-section, .values-section');
+            const elements = document.querySelectorAll('.about-section, .mission-vision-section, .values-section, .contact-section');
 
             const observerOptions = {
                 root: null,
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         } else {
             // Asegurarse de que los elementos sean visibles en móviles
-            document.querySelectorAll('.about-section, .mission-vision-section, .values-section').forEach(element => {
+            document.querySelectorAll('.about-section, .mission-vision-section, .values-section,.contact-text').forEach(element => {
                 element.style.opacity = 1;
                 element.style.transform = "none";
             });

@@ -566,6 +566,7 @@ body {
     justify-content: center;
 }
 
+
 .about-section, .mission-vision-section {
     background: linear-gradient(135deg, #cf0000 0%, #4d0000 100%);
     font-family: 'Velocista';
@@ -578,7 +579,16 @@ body {
     transform: translateX(-100%);
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
-
+.mission-vision-section:hover {
+    transform: scale(1.05); /* Agranda el contenedor */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Añade una sombra para resaltar */
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+.about-section:hover {
+    transform: scale(1.05); /* Agranda el contenedor */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Añade una sombra para resaltar */
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
 .about-section h1, .mission-vision-section h2 {
     font-family: 'Velocista', sans-serif;
     color: #ffffff;
@@ -693,6 +703,8 @@ body {
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
+/* Efecto de agrandamiento al pasar el puntero */
+
 .values-section h1 {
     font-family: 'Velocista', sans-serif;
     color: #ffffff;
@@ -701,6 +713,7 @@ body {
     text-transform: uppercase;
     font-size: 36px;
 }
+
 
 .values-section p {
     font-family: 'Evogria', sans-serif;
@@ -731,6 +744,12 @@ body {
     margin-bottom: 10px;
     border-bottom: 3px solid rgb(255, 255, 255); /* Ajusta el grosor según sea necesario */
     padding-bottom: 5px;
+    
+}
+.value-item:hover {
+    transform: scale(1.05); /* Agranda el contenedor */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Añade una sombra para resaltar */
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
 }
 
 
@@ -802,7 +821,8 @@ body {
 
 
 
-/* Estilos generales para la página de contacto */
+
+
 /* Estilos para los recuadros de información de contacto */
 .contact-info {
     display: flex;
@@ -818,14 +838,57 @@ body {
     text-align: center; /* Alineación del contenido al centro */
     margin: 10px; /* Espacio entre los elementos */
     flex: 1 1 100%; /* Ocupa todo el ancho en dispositivos pequeños */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px; /* Ajusta la altura mínima según tus necesidades */
+    font-family: 'evogriaitalic';
+    transition: transform 0.5s ease, box-shadow 0.3s ease; /* Añade una transición suave */
+}
+
+/* Efecto de agrandamiento al pasar el puntero */
+.contact-item:hover {
+    transform: scale(1.05); /* Agranda el contenedor */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Añade una sombra para resaltar */
+
+}
+
+.icon-container {
+    width: 100px; /* Ajusta el tamaño según tus necesidades */
+    height: 100px; /* Ajusta el tamaño según tus necesidades */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.icon-container img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .contact-item h3 {
-    margin-top: 10px; /* Espacio entre el título y el texto */
+    margin: 10px 0; /* Espacio entre el título y el texto */
 }
 
 .contact-item p {
     margin: 5px 0; /* Espacio alrededor del texto */
+}
+
+
+
+.whatsapp-icon {
+    width: 30%; /* Ajusta el tamaño según tus necesidades */
+    height: auto; /* Mantiene la proporción del aspecto */
+}
+
+
+
+.email-icon {
+    width: 30%; /* Ajusta el tamaño según tus necesidades */
+    height: auto; /* Mantiene la proporción del aspecto */
 }
 
 /* Estilos para el texto de ubicación */
@@ -844,6 +907,15 @@ body {
     margin-bottom: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     border: 1px solid #333;
+    transition: transform 0.5s ease, box-shadow 0.3s ease; /* Añade una transición suave */
+}
+
+/* Efecto de agrandamiento al pasar el puntero */
+.contact-text:hover {
+    transform: scale(1.05); /* Agranda el contenedor */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Añade una sombra para resaltar */
+
+
 }
 
 /* Estilos para el contenedor del mapa */
