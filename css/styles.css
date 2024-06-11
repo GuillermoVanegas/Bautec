@@ -946,6 +946,108 @@ body {
 
 
 
+/* Estilos para la página de servicios */
+.products-services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start; /* Alinea elementos al inicio verticalmente */
+}
+
+.products-services-container h1 {
+    font-family: 'Velocista', sans-serif;
+    background: linear-gradient(135deg, #cf0000 0%, #4d0000 100%);
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+    font-size: 36px;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de resaltar al pasar el puntero sobre el título */
+.products-services-container h1:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    background: linear-gradient(135deg, #cf0000 0%, #4d0000 100%);
+    font-family: 'Evogria', sans-serif;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 45%; /* Ajusta el ancho de las tarjetas para 2 columnas */
+    box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 5px;
+}
+
+.card p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes para diferentes tamaños de pantalla */
+@media (max-width: 1024px) {
+    .products-services-container h1 {
+        font-size: 28px;
+    }
+
+    .card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-services-container h1 {
+        font-size: 24px;
+    }
+
+    .card {
+        width: 100%; /* Una sola columna en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .products-services-container h1 {
+        font-size: 20px;
+    }
+
+    .card {
+        width: 100%; /* Una sola columna en pantallas más pequeñas */
+    }
+}
+
 
 
 
