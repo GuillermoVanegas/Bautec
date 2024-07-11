@@ -949,9 +949,6 @@ body {
 
 
 
-
-
-
 /* Estilos para la página de servicios */
 .products-services-container {
     max-width: 1200px;
@@ -986,17 +983,24 @@ body {
 }
 
 .card {
-    background: linear-gradient(135deg, #00000068 0%, #ffffffb5 100%); /* Degradado oscuro */
+    display: grid;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    background: linear-gradient(135deg, #00000068 0%, #ffffffb5 100%);
     font-family: 'Evogria', sans-serif;
     color: #ffffff;
-    padding: 20px;
-    border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.5s ease, box-shadow 0.3s ease;
     margin-bottom: 20px;
     text-align: center;
-    width: 45%; /* Ajusta el ancho de las tarjetas para 2 columnas */
-    box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho */
+    width: 45%;
+    box-sizing: border-box;
+}
+
+.card > * {
+    grid-area: 1/1;
+    transition: .4s;
 }
 
 .card img {
@@ -1004,58 +1008,51 @@ body {
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
+    transform: scale(1); /* Restablece el transform por defecto */
 }
 
-.card h2 {
-    margin-bottom: 10px;
-    font-size: 24px;
-    border-bottom: 2px solid #ffffff;
-    padding-bottom: 5px;
+.card figcaption {
+    display: grid;
+    align-items: end;
+    font-family: sans-serif;
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #fff;
+    padding: .75rem;
+    background: rgba(0, 0, 0, 0.6);
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.4s;
+    margin: -1px;
 }
 
-.card p {
-    font-size: 16px;
-    line-height: 1.6;
+.card:hover figcaption {
+    clip-path: inset(0 0 0 0);
 }
 
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.card:hover img {
+    transform: scale(1.2);
 }
 
-/* Ajustes para diferentes tamaños de pantalla */
-@media (max-width: 1024px) {
-    .products-services-container h1 {
-        font-size: 28px;
+@supports not (clip-path: inset(0 100% 0 0)) {
+    .card figcaption {
+        clip-path: none;
     }
+}
 
+@media (max-width: 1024px) {
     .card {
         width: 45%;
     }
 }
 
 @media (max-width: 768px) {
-    .products-services-container h1 {
-        font-size: 24px;
-    }
-
     .card {
-        width: 100%; /* Una sola columna en pantallas más pequeñas */
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .products-services-container h1 {
-        font-size: 20px;
-    }
-
     .card {
-        width: 100%; /* Una sola columna en pantallas más pequeñas */
+        width: 100%;
     }
 }
-
-
-
-
-
-
