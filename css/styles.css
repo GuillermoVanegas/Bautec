@@ -244,7 +244,7 @@
 
 /* BODY */
 body {
-    background: linear-gradient(135deg, #0f1c47, #0059ff, #1e00ff, #0b2860, #073ef4); /* Degradado azul con varios tonos */
+    background: linear-gradient(135deg, #1c0e78, #1350c9, #1c0e78, #1350c9, #1060ff); /* Degradado azul con varios tonos */
     background-size: cover; /* Ajusta el degradado para cubrir todo el fondo */
     background-position: center; /* Centra el degradado */
     background-repeat: no-repeat; /* Evita que el degradado se repita */
@@ -304,6 +304,11 @@ body {
         margin-top: 10px; /* Reduce el margen superior */
     }
 }
+
+
+
+
+
 
 
 
@@ -948,8 +953,7 @@ body {
 
 
 
-
-/* Estilos para la página de servicios */
+/* Estilos generales para la página de servicios */
 .products-services-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -958,7 +962,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: flex-start; /* Alinea elementos al inicio verticalmente */
+    align-items: flex-start;
 }
 
 .products-services-container h1 {
@@ -969,7 +973,7 @@ body {
     text-transform: uppercase;
     margin-bottom: 80px;
     font-size: 36px;
-    width: 100%; /* Ocupa todo el ancho del contenedor */
+    width: 100%;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -987,8 +991,8 @@ body {
     border-radius: 1rem;
     overflow: hidden;
     cursor: pointer;
-    background: linear-gradient(135deg, #00000068 0%, #ffffffb5 100%);
-    font-family: 'Evogria', sans-serif;
+    background: linear-gradient(135deg, #ffffff68 0%, #ffffffb5 100%);
+    font-family: 'EvogriaItalic', sans-serif;
     color: #ffffff;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.5s ease, box-shadow 0.3s ease;
@@ -1008,14 +1012,14 @@ body {
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
-    transform: scale(1); /* Restablece el transform por defecto */
+    transform: scale(1);
 }
 
 .card figcaption {
     display: grid;
     align-items: end;
-    font-family: sans-serif;
-    font-size: 2.3rem;
+    font-family: 'evogriaItalic',sans-serif;
+    font-size: 2.0rem;
     font-weight: bold;
     color: #fff;
     padding: .75rem;
@@ -1055,4 +1059,208 @@ body {
     .card {
         width: 100%;
     }
+}
+
+/* Estilos generales para la página de servicios */
+.products-services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.products-services-container h1 {
+    font-family: 'Velocista', sans-serif;
+    background: linear-gradient(135deg, #cf0000 0%, #4d0000 100%);
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+    font-size: 36px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de resaltar al pasar el puntero sobre el título */
+.products-services-container h1:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    display: grid;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ffffff68 0%, #ffffffb5 100%);
+    font-family: 'EvogriaItalic', sans-serif;
+    color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 45%;
+    box-sizing: border-box;
+}
+
+.card > * {
+    grid-area: 1/1;
+    transition: .4s;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transform: scale(1);
+}
+
+.card figcaption {
+    display: grid;
+    align-items: end;
+    font-family: 'evogriaItalic',sans-serif;
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: #fff;
+    padding: .75rem;
+    background: rgba(0, 0, 0, 0.6);
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.4s;
+    margin: -1px;
+}
+
+.card:hover figcaption {
+    clip-path: inset(0 0 0 0);
+}
+
+.card:hover img {
+    transform: scale(1.2);
+}
+
+@supports not (clip-path: inset(0 100% 0 0)) {
+    .card figcaption {
+        clip-path: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
+}
+
+/* Estilos específicos para el contenedor especial */
+.special-container {
+    position: relative;
+    width: 1100px; /* Ajusta el tamaño según tus necesidades */
+    height: 600px; /* Ajusta el tamaño según tus necesidades */
+    perspective: 1000px;
+    margin: 20px;
+    
+}
+
+.cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 1.5s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Mantener una sombra sutil si lo deseas */
+    
+}
+
+.special-container:hover .cover {
+    transform: rotateY(180deg);
+}
+
+.cover .special-title, .cover .container-back {
+    position: absolute;
+    font-family: 'EvogriaItalic', sans-serif;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background: transparent; /* Hacer el fondo transparente */
+}
+
+.special-title {
+    background: rgba(0, 0, 0, 0); /* Fondo completamente transparente */
+    font-size: 4em;
+    z-index: 2;
+}
+
+.container-back {
+    background: rgba(0, 0, 0, 0); /* Fondo completamente transparente */
+    transform: rotateY(180deg);
+    z-index: 1;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    border-radius: 20px; /* Esquinas circulares */
+    
+}
+
+.text, .back-text {
+    position: relative;
+    z-index: 2; /* Asegura que el texto esté por encima de la imagen */
+}
+
+
+
+
+.back-text {
+    color: white; /* Ajusta el color del texto si es necesario para que sea visible */
+    list-style-type: none; /* Quita los puntos predeterminados de la lista */
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 20px; /* Espacio entre los elementos de la lista */
+    text-align: left;
+    line-height: 1.5;
+    overflow-y: auto; /* Permite el desplazamiento si el contenido excede el área visible */
+    max-height: 100%; /* Ajusta para permitir el desplazamiento si el contenido es largo */
+}
+
+.back-text li {
+    margin-bottom: 10px; /* Espacio entre los elementos de la lista */
 }
