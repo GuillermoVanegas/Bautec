@@ -1061,114 +1061,6 @@ body {
     }
 }
 
-/* Estilos generales para la página de servicios */
-.products-services-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    padding-top: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-}
-
-.products-services-container h1 {
-    font-family: 'Velocista', sans-serif;
-    background: linear-gradient(135deg, #cf0000 0%, #4d0000 100%);
-    color: #ffffff;
-    text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 80px;
-    font-size: 36px;
-    width: 100%;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: transform 0.5s ease, box-shadow 0.3s ease;
-}
-
-/* Efecto de resaltar al pasar el puntero sobre el título */
-.products-services-container h1:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.card {
-    display: grid;
-    border-radius: 1rem;
-    overflow: hidden;
-    cursor: pointer;
-    background: linear-gradient(135deg, #ffffff68 0%, #ffffffb5 100%);
-    font-family: 'EvogriaItalic', sans-serif;
-    color: #ffffff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: transform 0.5s ease, box-shadow 0.3s ease;
-    margin-bottom: 20px;
-    text-align: center;
-    width: 45%;
-    box-sizing: border-box;
-}
-
-.card > * {
-    grid-area: 1/1;
-    transition: .4s;
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    transform: scale(1);
-}
-
-.card figcaption {
-    display: grid;
-    align-items: end;
-    font-family: 'evogriaItalic',sans-serif;
-    font-size: 2.0rem;
-    font-weight: bold;
-    color: #fff;
-    padding: .75rem;
-    background: rgba(0, 0, 0, 0.6);
-    clip-path: inset(0 100% 0 0);
-    transition: clip-path 0.4s;
-    margin: -1px;
-}
-
-.card:hover figcaption {
-    clip-path: inset(0 0 0 0);
-}
-
-.card:hover img {
-    transform: scale(1.2);
-}
-
-@supports not (clip-path: inset(0 100% 0 0)) {
-    .card figcaption {
-        clip-path: none;
-    }
-}
-
-@media (max-width: 1024px) {
-    .card {
-        width: 45%;
-    }
-}
-
-@media (max-width: 768px) {
-    .card {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .card {
-        width: 100%;
-    }
-}
-
 /* Estilos específicos para el contenedor especial */
 .special-container {
     position: relative;
@@ -1176,7 +1068,6 @@ body {
     height: 600px; /* Ajusta el tamaño según tus necesidades */
     perspective: 1000px;
     margin: 20px;
-    
 }
 
 .cover {
@@ -1186,7 +1077,6 @@ body {
     transition: transform 1.5s;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Mantener una sombra sutil si lo deseas */
-    
 }
 
 .special-container:hover .cover {
@@ -1202,7 +1092,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
@@ -1236,16 +1126,12 @@ body {
     object-fit: cover;
     z-index: 1;
     border-radius: 20px; /* Esquinas circulares */
-    
 }
 
 .text, .back-text {
     position: relative;
     z-index: 2; /* Asegura que el texto esté por encima de la imagen */
 }
-
-
-
 
 .back-text {
     color: white; /* Ajusta el color del texto si es necesario para que sea visible */
@@ -1263,4 +1149,17 @@ body {
 
 .back-text li {
     margin-bottom: 10px; /* Espacio entre los elementos de la lista */
+    position: relative;
 }
+
+.back-text li::after {
+    content: '';
+    display: block;
+    width: 10%; /* Ajusta esto para cambiar la longitud del subrayado */
+    height: 2px;
+    background-color: rgb(255, 0, 0);
+    position:static;
+    bottom: -2px;
+    left: 0;
+}
+
