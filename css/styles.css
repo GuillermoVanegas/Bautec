@@ -1220,7 +1220,6 @@ body {
 
 .new-container:hover img {
     transform: scale(1.2);
-    filter: brightness(1.2);
 }
 
 .new-container:hover .text {
@@ -1257,4 +1256,15 @@ body {
     width: 100%;
     margin: 20px 0;
 }
+/* Estilos para alinear las últimas 4 imágenes en la misma fila */
+.tools-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tools-container .new-container {
+    width: 21%; /* Ajusta este valor según sea necesario */
+}
+
 
