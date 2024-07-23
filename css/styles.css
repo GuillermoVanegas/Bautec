@@ -1245,3 +1245,16 @@ body {
     }
 }
 
+/* Estilos específicos para las tarjetas dentro del contenedor vertical */
+.vertical-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+
+.vertical-cards .card {
+    width: 100%;
+    margin: 20px 0;
+}
+
